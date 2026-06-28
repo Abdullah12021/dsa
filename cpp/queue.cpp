@@ -9,6 +9,8 @@
  * 
  * rear is similar to stack's top
  * front is the one waiting at 0 index to delete
+ * 
+ * DIFFICULTY: faced problems with where to place front and rear
  */
 
 #include <iostream>
