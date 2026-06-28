@@ -50,7 +50,7 @@ public:
      * head answers: "Good work! Give it to me now, 
      * You are free to go."
      */
-
+    
     void showList(){
         if(isEmpty()){
             cout << "List is Empty." << endl;
@@ -67,6 +67,19 @@ public:
         }
         cout << "NULL" << endl;
     }
+
+    void deleteAtFront(){
+        if (isEmpty()) {
+            cout << "List is Empty! Nothing to delete." << endl;
+            return;
+        }
+
+        Node* temp = head;
+        head = head->next;
+
+        cout << "Vaporized data value: " << temp->data << endl;
+        delete temp;    
+    }
 };
 
 int main(){
@@ -82,5 +95,3 @@ int main(){
     
     return 0;
 }
-
-
