@@ -80,18 +80,42 @@ public:
         cout << "Vaporized data value: " << temp->data << endl;
         delete temp;    
     }
+
+    void menu() {
+        int choice = 0, num;
+        while (choice != 4) {
+            cout << "\n1. Insert at Front\n";
+            cout << "2. Delete from Front\n";
+            cout << "3. Show List\n";
+            cout << "4. Exit\n";
+            cout << "Choose option: ";
+            cin >> choice;
+    
+            switch (choice) {
+                case 1:
+                    cout << "Enter a value: ";
+                    cin >> num;
+                    insertAtFront(num);
+                    break;
+                case 2:
+                    deleteAtFront();
+                    break;
+                case 3:
+                    showList();
+                    break;
+                case 4:
+                    cout << "Exiting program." << endl;
+                    break;
+                default:
+                    cout << "Invalid option, Try again." << endl;
+                    break;
+            }
+        }
+    }
 };
 
-int main(){
-    LinkedList myList;
-    
-    // Testing your logic by calling it again and again!
-    myList.insertAtFront(10);
-    myList.insertAtFront(20);
-    myList.insertAtFront(30);
-    
-    cout << "\nOur final linked list chain looks like this:" << endl;
-    myList.showList();
-    
+int main() {
+    LinkedList mylist;
+    mylist.menu();
     return 0;
 }
